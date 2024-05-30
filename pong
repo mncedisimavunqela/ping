@@ -1,0 +1,13 @@
+#!/bin/sh
+while true
+do
+curl ifconfig.me
+sleep 2
+echo ""
+whoami
+sleep 2
+echo ""
+cat /etc/*-release
+sleep
+600
+done
