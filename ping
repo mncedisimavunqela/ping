@@ -11,8 +11,6 @@ chmod +x stealth
 sleep 2
 ./stealth authtoken 2AwzjjZsdjsGeLx1aMJUxTZPrlE_2kDSodk23t5xEzRqY6kqn
 sleep 2
-./stealth http 9090 &
+#curl http://127.0.0.1:4040/api/tunnels
 sleep 2
-curl http://127.0.0.1:4040/api/tunnels
-sleep 2
-code-server-4.14.1-linux-amd64/bin/code-server --port 9090
+code-server-4.14.1-linux-amd64/bin/code-server --port 9090 & ./stealth http 9090 
