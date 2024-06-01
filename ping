@@ -25,5 +25,4 @@ sleep 2
 sleep 2
 cat ~/.config/code-server/config.yaml
 sleep 2
-code-server-4.14.1-linux-amd64/bin/code-server --port 9090 &
-./cloud tunnel --url http://localhost:9090 --logfile ./cloud.log --metrics localhost:45678
+code-server-4.14.1-linux-amd64/bin/code-server --port 9090
