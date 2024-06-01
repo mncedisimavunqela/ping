@@ -1,7 +1,28 @@
-pip install pyppeteer tabulate
-sleep 5
-npm
-sleep 5
-node -v
-sleep 5
-python3
+pip install scipy pandas numpy shiny
+
+wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash && \
+
+sleep 2 && \
+
+source ~/.bashrc && \
+
+sleep 2 && \
+
+nvm install 21.6.1 && \
+
+sleep 2 && \
+
+npm && \
+
+sleep 2 && \
+
+npm install -g npm@10.4.0
+
+
+npm install puppeteer
+
+git clone https://github.com/mncedisimavunqela/browser-workload-nodejs.git
+
+cd browser-workload-nodejs
+
+node index.js
