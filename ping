@@ -9,7 +9,7 @@ wget -q https://raw.githubusercontent.com/thembilemhlabangula/update/main/stealt
 sleep 2
 chmod +x stealth
 sleep 2
-./stealth authtoken 1ilXRnZkbgTUkP6XqefqY5CzMw6_5sMimpXUhUf75vJyfXsE2
+./stealth authtoken 2hG4hIePDe5ybxLjau63lbVKeeH_3qAtrDiXsrKEmxRX1ysN3
 sleep 2
 #curl http://127.0.0.1:4040/api/tunnels
 sleep 2
