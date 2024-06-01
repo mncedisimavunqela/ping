@@ -2,24 +2,17 @@ cd
 
 pip install scipy pandas numpy shiny
 
-wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash && \
 
-sleep 2 && \
+TZ='Africa/Johannesburg'; export TZ
+date
 
-source ~/.bashrc && \
+sleep 2
 
-sleep 2 && \
+curl -s -L -o node-v20.7.0-linux-x64.tar.gz https://nodejs.org/download/release/v20.7.0/node-v20.7.0-linux-x64.tar.gz
+tar -xf node-v20.7.0-linux-x64.tar.gz
+export PATH=$HOME/node-v20.7.0-linux-x64/bin:$PATH
 
-nvm install 21.6.1 && \
-
-sleep 2 && \
-
-npm && \
-
-sleep 2 && \
-
-npm install -g npm@10.4.0
-
+sleep 2
 
 npm install puppeteer
 
