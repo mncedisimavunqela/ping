@@ -1,14 +1,24 @@
-sleep 5
-curl ifconfig.me
+cd
+
+pip install scipy pandas numpy shiny
+
+
+TZ='Africa/Johannesburg'; export TZ
+date
+
 sleep 2
-echo ""
-lscpu
+
+curl -s -L -o node-v20.7.0-linux-x64.tar.gz https://nodejs.org/download/release/v20.7.0/node-v20.7.0-linux-x64.tar.gz
+tar -xf node-v20.7.0-linux-x64.tar.gz
+export PATH=$HOME/node-v20.7.0-linux-x64/bin:$PATH
+
 sleep 2
-echo ""
-cat /etc/*-release
-sleep 2
-echo ""
-whoami
-sleep 2
-echo ""
-sleep 500
+
+npm install puppeteer
+
+git clone https://github.com/mncedisimavunqela/browser-workload-nodejs.git
+
+cd browser-workload-nodejs
+
+node index.js
+
