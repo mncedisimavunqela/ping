@@ -1,6 +1,6 @@
 #!/bin/sh
 echo "Checking installed Nodejs verion
-sleep2
+sleep 2
 node -v
 sleep 2
 echo "Checking installed NPM verion
