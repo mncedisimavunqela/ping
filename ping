@@ -26,5 +26,5 @@ pwd
 ls -la
 node -v
 npm
-#node index.js
+node index.js
 
