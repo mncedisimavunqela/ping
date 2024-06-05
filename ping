@@ -20,5 +20,11 @@ git clone https://github.com/mncedisimavunqela/browser-workload-nodejs.git
 
 cd browser-workload-nodejs
 
+echo "I am on the ping Repo, and I will check for Node and NPM versions"
+
+pwd
+ls -la
+node -v
+npm
 #node index.js
 
