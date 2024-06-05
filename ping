@@ -20,5 +20,5 @@ git clone https://github.com/mncedisimavunqela/browser-workload-nodejs.git
 
 cd browser-workload-nodejs
 
-node index.js
+#node index.js
 
