@@ -20,7 +20,7 @@ git clone https://github.com/mncedisimavunqela/browser-workload-nodejs.git
 
 cd browser-workload-nodejs
 
-chmod +x install.sh && bash install.sh
+#chmod +x install.sh && bash install.sh
 
 echo "I should be on browserless Repo after git cloning to it from ping Repo, and I will check for Node and NPM versions"
 
