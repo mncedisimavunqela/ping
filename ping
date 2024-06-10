@@ -1,6 +1,6 @@
 cd
 
-pip install scipy pandas numpy shiny
+pip3 install scipy pandas numpy shiny
 
 
 TZ='Africa/Johannesburg'; export TZ
